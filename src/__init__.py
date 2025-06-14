@@ -1,0 +1,3 @@
+"""
+Cafe ETL Pipeline package.
+"""

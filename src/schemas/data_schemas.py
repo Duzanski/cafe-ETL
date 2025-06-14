@@ -28,6 +28,14 @@ events_schema = StructType(
         StructField("time", StringType(), False),
     ]
 )
+schema_value = StructType(
+    [
+        StructField("offer_id", StringType(), True),
+        StructField("offer id", StringType(), True),
+        StructField("amount", DoubleType(), True),
+        StructField("reward", DoubleType(), True),
+    ]
+)
 
 # Offers data schema
 offers_schema = StructType(
