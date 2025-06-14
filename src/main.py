@@ -21,12 +21,12 @@ def main():
 
         # Process Bronze Layer
         logger.info("Processing Bronze layer...")
-        ingest_bronze(spark)
+        # ingest_bronze(spark)
         logger.info("Bronze layer processing completed")
 
         # Process Silver Layer
         logger.info("Processing Silver layer...")
-        # process_silver(spark)
+        process_silver(spark)
         logger.info("Silver layer processing completed")
 
         # Process Gold Layer
