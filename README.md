@@ -144,17 +144,17 @@ cafe-ETL/
   - Incremental processing
 
 - **Gold Layer**
-  - **Marketing Channel Analysis**
-    - Channel Effectiveness Metrics
-    
-
-  - **Customer Age Analysis**
-    - Age Distribution Metrics
+  - **Which marketing channel is the most effective in terms of offer completion rate?**
+  ![Marketing Channel Effectiveness](image1.png)
 
 
-  - **Offer Completion Timing**
-    - Time-to-Completion Metrics
- 
+  - **How is the age distribution of customers who completed offers compared to those who did not?**
+  ![Marketing Channel Effectiveness](image2.png)
+
+
+  - **What is the average time taken by customers to complete an offer after receiving it?**
+
+    ![Marketing Channel Effectiveness](image3.png)
  
 
 ### Monitoring & Quality
