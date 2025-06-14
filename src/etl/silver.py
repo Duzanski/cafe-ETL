@@ -63,7 +63,10 @@ def process_silver(spark: SparkSession) -> None:
         .withColumn("reward", F.col("reward").cast(IntegerType()))
         .withColumn("duration", F.col("duration").cast(IntegerType()))
         .withColumn("last_updated", F.current_timestamp())
-        .dropDuplicates(["offer_id"])
+        .withColumn("channels_array", F.from_json(F.col("channels"), "array<string>"))
+        .withColumn("channel", F.explode(F.col("channels_array")))
+        .drop("channels_array")
+        .dropDuplicates(["offer_id", "channel"])
     )
 
     write_silver(
