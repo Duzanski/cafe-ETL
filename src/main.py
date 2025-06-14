@@ -5,7 +5,7 @@ from src.etl.silver import process_silver
 from src.etl.gold import process_gold
 
 # Configure logging
-logging.basicConfig(level=logging.ERROR)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -21,7 +21,7 @@ def main():
 
         # Process Bronze Layer
         logger.info("Processing Bronze layer...")
-        # ingest_bronze(spark)
+        ingest_bronze(spark)
         logger.info("Bronze layer processing completed")
 
         # Process Silver Layer
@@ -31,7 +31,7 @@ def main():
 
         # Process Gold Layer
         logger.info("Processing Gold layer...")
-        # process_gold(spark)
+        process_gold(spark)
         logger.info("Gold layer processing completed")
 
         logger.info("ETL pipeline completed successfully!")
