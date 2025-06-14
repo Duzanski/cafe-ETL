@@ -13,18 +13,30 @@ def ingest_bronze(spark: SparkSession) -> None:
         .csv("data/landing_zone/customers.csv")
     )
 
-    write_bronze(customers_df, "customers")
+    write_bronze(
+        customers_df,
+        "customers",
+        add_timestamp=True,
+    )
 
     events_df = (
         spark.read.option("header", "true")
         .schema(events_schema)
         .csv("data/landing_zone/events.csv")
     )
-    write_bronze(events_df, "events")
+    write_bronze(
+        events_df,
+        "events",
+        add_timestamp=True,
+    )
 
     offers_df = (
         spark.read.option("header", "true")
         .schema(offers_schema)
         .csv("data/landing_zone/offers.csv")
     )
-    write_bronze(offers_df, "offers")
+    write_bronze(
+        offers_df,
+        "offers",
+        add_timestamp=True,
+    )
